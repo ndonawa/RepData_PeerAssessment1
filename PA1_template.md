@@ -1,4 +1,11 @@
 ---
+title: "PA1_template.Rmd"
+author: "Nevon"
+date: "June 13, 2018"
+output: html_document
+---
+
+---
 title: "Course5Project1"
 author: "Nevon"
 date: "June 12, 2018"
