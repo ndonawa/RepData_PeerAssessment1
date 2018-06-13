@@ -31,8 +31,6 @@ hist(stepsbyday$steps, xlab = "Number of Steps Per Day", main = "Total Steps Per
         abline(v = mean(stepsbyday$steps), col = "yellow", lwd = 2)
         legend(x = "topright", c("Median", "Mean"), col =c("red", "yellow"), lwd = c(2, 2, 2 ))
 ```
-
-
 4. Afterwards we will look at the steps per intervals
 4a.First removing NAs by creating new data set than plotting the figures
 ```{r}
@@ -46,7 +44,6 @@ hist(stepsbyday$steps, xlab = "Number of Steps Per Day", main = "Total Steps Per
                         ##Find Max Step Interval
                         max <- max(intrv)
                         print(max)
-                        
 ```
 5. Then we calculate the weight of missing values, i.e(how many missing values are there)
 5a. Also we will replace missing values using the value of the average steps per day we calculated before &                create clean data set
