@@ -4,31 +4,46 @@
         date: "June 12, 2018"
         output:
          html_document:
-                keep_md: true
+                 keep_md: true
+                
+
         ---
         
-    
-    ```r
+
+```r
         knitr::opts_chunk$set(echo = TRUE)
-    ```
+```
         
         1. First we load the walking activity data
-    
-    ```r
+
+```r
         ##Load Data
         fitness <- read.csv("activity.csv")
                 df <- data.frame(fitness)
-    ```
+```
         2. Next we will calculate base measure
-    
-    ```r
+
+```r
         ## Calculations/ Metrics
                 stepsbyday <- aggregate(steps ~ date, data = df, sum) ## steps per day
                 avgsteps <- mean(stepsbyday$steps)## average steps by day
                 median <- median(stepsbyday$steps)## median steps by day
-    ```
+                print(avgsteps)
+```
+
+```
+## [1] 10766.19
+```
+
+```r
+                print(median)
+```
+
+```
+## [1] 10765
+```
         3. Following the base measures we plot the average steps by day 
-    
+
 ```r
         ##Plot Histogram & Report Figures
         hist(stepsbyday$steps, xlab = "Number of Steps Per Day", main = "Total Steps Per Day", breaks = 4, col =              "royal blue") 
@@ -37,11 +52,11 @@
                 abline(v = mean(stepsbyday$steps), col = "yellow", lwd = 2)
                 legend(x = "topright", c("Median", "Mean"), col =c("red", "yellow"), lwd = c(2, 2, 2 ))
 ```
-    
+
 ![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png)
         4. Afterwards we will look at the steps per intervals 4a.First removing NAs by creating new data set than             plotting the figure
         
-  
+
 ```r
         ## Calculate Steps by Interval
                 library(ggplot2)
@@ -68,19 +83,19 @@
         5b. Furthermore we will create a new data set which merges orignal data set with new clean data
         5c. Lastly we will plot the new set & find new measure
                 
-    
-    ```r
+
+```r
         ## Calculate Weight of Missing Values
                         ALLNAs <- as.numeric(is.na(df)) 
                         Missing_Val <- sum(ALLNAs)
                         print(Missing_Val)
-    ```
-    
-    ```
-    ## [1] 2304
-    ```
-    
-    ```r
+```
+
+```
+## [1] 2304
+```
+
+```r
                                 ##Substitute NAs with average steps per date
                                 library(plyr)
                                 dfvalues <- Intervals
@@ -95,19 +110,19 @@
                                         col = "royal blue",
                                         breaks = 10,
                                         xlab = "Daily Steps")
-    ```
-    
+```
+
 ![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png)
-    
-    ```r
+
+```r
                                 ##Find Metrics of Newsteptotal
                                 summary(newstepstotal)
-    ```
-    
-    ```
-    ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-    ##      41    8841   10765   10766   13294   21194
-    ```
+```
+
+```
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##      41    8841   10765   10766   13294   21194
+```
         6.The last part of our anlysis will be to explore differences between weekend & weekdays
                         6a. First create new variable for weekends/weekdays
                         6b. Next find value of steps per daytype
