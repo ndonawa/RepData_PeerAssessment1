@@ -29,19 +29,19 @@
     ```
         3. Following the base measures we plot the average steps by day 
     
-    ```r
+```r
         ##Plot Histogram & Report Figures
         hist(stepsbyday$steps, xlab = "Number of Steps Per Day", main = "Total Steps Per Day", breaks = 4, col =              "royal blue") 
                 ## Add Metrics
                 abline(v = median(stepsbyday$steps), col = "red", lwd = 10)
                 abline(v = mean(stepsbyday$steps), col = "yellow", lwd = 2)
                 legend(x = "topright", c("Median", "Mean"), col =c("red", "yellow"), lwd = c(2, 2, 2 ))
-    ```
+```
     
-    ![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png)
+![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png)
         4. Afterwards we will look at the steps per intervals 4a.First removing NAs by creating new data set than             plotting the figure
         
-
+  
 ```r
         ## Calculate Steps by Interval
                 library(ggplot2)
@@ -97,7 +97,7 @@
                                         xlab = "Daily Steps")
     ```
     
-    ![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png)
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png)
     
     ```r
                                 ##Find Metrics of Newsteptotal
