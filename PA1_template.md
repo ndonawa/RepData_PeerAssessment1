@@ -61,7 +61,7 @@ hist(stepsbyday$steps, xlab = "Number of Steps Per Day", main = "Total Steps Per
                 g+geom_line() + xlab("Intervals") + ylab("Avg Steps") + ggtitle("Avg number of Stepgs by Intervals")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
+![](C:/Users/T93J09O/Documents/unnamed-chunk-4-1.png)<!-- -->
 
 ```r
                         ##Find Max Step Interval
